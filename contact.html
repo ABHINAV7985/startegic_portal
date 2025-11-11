@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - CodeHive</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #4e8cff, #0056b3);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .card {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: #0056b3;
+        }
+
+        .card h3 {
+            margin: 1rem 0;
+            color: #333;
+        }
+
+        .card p {
+            color: #666;
+        }
+
+        form {
+            background: white;
+            border-radius: 8px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            flex: 2;
+            margin-top: 12px;
+        }
+
+        form input, form textarea, form button {
+            width: 100%;
+            margin-bottom: 1rem;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        form input:focus, form textarea:focus {
+            border-color: #0056b3;
+            outline: none;
+        }
+
+        form button {
+            background: #0056b3;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        form button:hover {
+            background: #003a70;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #333;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .schedule-section {
+            background: #4e8cff;
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .schedule-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .schedule-section a {
+            background: white;
+            color: #4e8cff;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .schedule-section a:hover {
+            background: #0056b3;
+            color: white;
+        }
+
+        .icon {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 1rem;
+            color: #0056b3;
+        }
+        .pw{
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo">
+            <img src="img/b1.jpg" alt="Logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="Index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="http://127.0.0.1:5000">Practice</a>
+            </li>
+            <li><a href="interview.html">Interview</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="auth-links">
+            <a href="login.html" class="btn">Login</a>
+            <a href="Sign.html" class="btn signup">Sign Up</a>
+        </div>
+        <hr>
+    </nav>
+
+    <div class="container">
+        <!-- Support Section -->
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-headset"></i>
+                <h3>Help & Support</h3>
+                <p>Need assistance? Contact our 24/7 support team.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-envelope"></i>
+                <h3>Email Us</h3>
+                <p>Drop us an email at <strong>support@codehive.com</strong>.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-phone-alt"></i>
+                <h3>Call Us</h3>
+                <p>Reach us directly at <strong>+1 (800) 555-1234</strong>.</p>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="grid">
+            <form id="contact-form">
+                <h3>Send Us a Message</h3>
+                <br>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <!-- Interview Scheduling -->
+        <div class="schedule-section">
+            <h2>Schedule an Interview</h2>
+            <p class="pw">Ready to put your skills to the test? Schedule a mock or real interview with CodeHive experts.</p>
+            <a href="/schedule">Schedule Now</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2023 CodeHive. All rights reserved.
+    </footer>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            const formData = { name, email, message };
+
+            try {
+                const response = await fetch('http://localhost:3000/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData),
+                });
+
+                const data = await response.json();
+                alert(data.message);
+            } catch (error) {
+                alert('Error sending message');
+            }
+        });
+    </script>
+</body>
+</html>

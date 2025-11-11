@@ -1,0 +1,136 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f8fa;
+    color: #333;
+}
+
+header.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f7f8fa;
+    border-bottom: 1px solid #ddd;
+}
+
+header .logo img {
+    height: 40px;
+}
+
+header .user-menu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+header .user-menu .survey-btn {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+header .user-menu .user-avatar i {
+    font-size: 24px;
+    color: #333;
+}
+
+main.content {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+}
+.interview-section h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between the icon and text */
+}
+
+.interview-section h1 i {
+    color: #007bff; /* Icon color */
+    font-size: 28px; /* Icon size */
+}
+
+
+.create-interview .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 150px;
+    margin: 20px auto;
+    background: #eef4ff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.create-interview .card:hover {
+    transform: translateX(5px);
+  }
+
+.create-interview .card .plus-icon {
+    font-size: 40px;
+    color: #007bff;
+}
+
+.create-interview .card p {
+    font-size: 16px;
+    color: #333;
+}
+
+.usage-info {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.usage-info p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.usage-bar {
+    width: 80%;
+    height: 8px;
+    margin: 10px auto;
+    background-color: #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.used-bar {
+    height: 100%;
+    background-color: #007bff;
+}
+
+.past-interviews h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+.filter-btn, .view-btn {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.filter-btn i, .view-btn i {
+    margin-left: 5px;
+}
+
+.filter-btn:hover, .view-btn:hover {
+    background-color: #eef4ff;
+    border-color: #007bff;
+}

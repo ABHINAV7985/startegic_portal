@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tutorials</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        .sidebar h2 {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 0;
+            border-bottom: 1px solid #444;
+        }
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        .code-block {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-left: 4px solid #007BFF;
+            font-family: monospace;
+            white-space: pre-wrap;
+            margin-top: 10px;
+        }
+        .description {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>HTML Tutorials</h2>
+        <a href="#" onclick="loadContent('home')">HTML Home</a>
+        <a href="#" onclick="loadContent('introduction')">HTML Introduction</a>
+        <a href="#" onclick="loadContent('editors')">HTML Editors</a>
+        <a href="#" onclick="loadContent('basic')">HTML Basic</a>
+        <a href="#" onclick="loadContent('elements')">HTML Elements</a>
+        <a href="#" onclick="loadContent('attributes')">HTML Attributes</a>
+        <a href="#" onclick="loadContent('headings')">HTML Headings</a>
+        <a href="#" onclick="loadContent('paragraphs')">HTML Paragraphs</a>
+        <a href="#" onclick="loadContent('styles')">HTML Styles</a>
+        <a href="#" onclick="loadContent('formatting')">HTML Formatting</a>
+        <a href="#" onclick="loadContent('quotations')">HTML Quotations</a>
+        <a href="#" onclick="loadContent('comments')">HTML Comments</a>
+        <a href="#" onclick="loadContent('colors')">HTML Colors</a>
+        <a href="#" onclick="loadContent('css')">HTML CSS</a>
+        <a href="#" onclick="loadContent('links')">HTML Links</a>
+        <a href="#" onclick="loadContent('images')">HTML Images</a>
+        <a href="#" onclick="loadContent('favicon')">HTML Favicon</a>
+        <a href="#" onclick="loadContent('pagetitle')">HTML Page Title</a>
+        <a href="#" onclick="loadContent('tables')">HTML Tables</a>
+        <a href="#" onclick="loadContent('lists')">HTML Lists</a>
+        <a href="#" onclick="loadContent('blockinline')">HTML Block & Inline</a>
+        <a href="#" onclick="loadContent('div')">HTML Div</a>
+        <a href="#" onclick="loadContent('classes')">HTML Classes</a>
+        <a href="#" onclick="loadContent('id')">HTML Id</a>
+        <a href="#" onclick="loadContent('iframes')">HTML Iframes</a>
+        <a href="#" onclick="loadContent('javascript')">HTML JavaScript</a>
+        <a href="#" onclick="loadContent('filepaths')">HTML File Paths</a>
+        <a href="#" onclick="loadContent('head')">HTML Head</a>
+        <a href="#" onclick="loadContent('layout')">HTML Layout</a>
+        <a href="#" onclick="loadContent('responsive')">HTML Responsive</a>
+        <a href="#" onclick="loadContent('computercode')">HTML Computercode</a>
+        <a href="#" onclick="loadContent('semantics')">HTML Semantics</a>
+        <a href="#" onclick="loadContent('styleguide')">HTML Style Guide</a>
+        <a href="#" onclick="loadContent('entities')">HTML Entities</a>
+        <a href="#" onclick="loadContent('symbols')">HTML Symbols</a>
+        <a href="#" onclick="loadContent('emojis')">HTML Emojis</a>
+        <a href="#" onclick="loadContent('charsets')">HTML Charsets</a>
+        <a href="#" onclick="loadContent('urlencode')">HTML URL Encode</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="main-content">
+        <h1>Welcome to the HTML Tutorial</h1>
+        <p>Select a topic from the sidebar to get started.</p>
+    </div>
+
+    <script>
+        // Content Data
+        const contentData = {
+    home: {
+        title: "HTML Home",
+        description: "Welcome to the HTML tutorial. HTML is the foundation of web development. This tutorial covers all essential HTML concepts and features.",
+        code: `
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;HTML Tutorial&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to HTML&lt;/h1&gt;
+    &lt;p&gt;HTML is the standard markup language for creating web pages.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        `
+    },
+    introduction: {
+        title: "HTML Introduction",
+        description: "HTML (HyperText Markup Language) is the standard language for creating web pages. It describes the structure of a web page.",
+        code: `
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;HTML Introduction&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;What is HTML?&lt;/h1&gt;
+    &lt;p&gt;HTML is the building block of all websites.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        `
+    },
+    editors: {
+        title: "HTML Editors",
+        description: "HTML code can be written using simple text editors or specialized code editors like Visual Studio Code, Sublime Text, or Notepad++.",
+        code: `
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;HTML Editors&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Write HTML Anywhere&lt;/h1&gt;
+    &lt;p&gt;Use an editor like VS Code for better development experience.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        `
+    },
+    basic: {
+        title: "HTML Basic",
+        description: "An HTML document starts with a DOCTYPE declaration and contains the &lt;html&gt;, &lt;head&gt;, and &lt;body&gt; elements.",
+        code: `
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;HTML Basic&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Basic HTML Structure&lt;/h1&gt;
+    &lt;p&gt;Every webpage starts with these basic elements.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        `
+    },
+    elements: {
+        title: "HTML Elements",
+        description: "HTML elements define the structure of a webpage. Examples include headings, paragraphs, and links.",
+        code: `
+&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;a href="https://example.com"&gt;This is a link&lt;/a&gt;
+        `
+    },
+    attributes: {
+        title: "HTML Attributes",
+        description: "HTML attributes provide additional information about elements, such as id, class, or style.",
+        code: `
+&lt;img src="image.jpg" alt="Sample Image" width="300"&gt;
+&lt;a href="https://example.com" target="_blank"&gt;Open Example&lt;/a&gt;
+        `
+    },
+    headings: {
+        title: "HTML Headings",
+        description: "HTML headings are used to define headings in a webpage, from &lt;h1&gt; (largest) to &lt;h6&gt; (smallest).",
+        code: `
+&lt;h1&gt;Main Heading&lt;/h1&gt;
+&lt;h2&gt;Subheading&lt;/h2&gt;
+&lt;h3&gt;Section Heading&lt;/h3&gt;
+        `
+    },
+    paragraphs: {
+        title: "HTML Paragraphs",
+        description: "HTML paragraphs are defined using the &lt;p&gt; element. They group text into blocks.",
+        code: `
+&lt;p&gt;This is a paragraph of text.&lt;/p&gt;
+&lt;p&gt;This is another paragraph.&lt;/p&gt;
+        `
+    },
+    styles: {
+        title: "HTML Styles",
+        description: "Inline styles can be added using the 'style' attribute to customize the appearance of elements.",
+        code: `
+&lt;p style="color: red;"&gt;This text is red.&lt;/p&gt;
+&lt;p style="font-size: 20px;"&gt;This text is larger.&lt;/p&gt;
+        `
+    },
+    formatting: {
+        title: "HTML Formatting",
+        description: "HTML formatting tags define styled text, such as bold, italic, or underlined text.",
+        code: `
+&lt;b&gt;Bold Text&lt;/b&gt;
+&lt;i&gt;Italic Text&lt;/i&gt;
+&lt;u&gt;Underlined Text&lt;/u&gt;
+        `
+    },
+    quotations: {
+        title: "HTML Quotations",
+        description: "HTML provides elements like &lt;blockquote&gt; and &lt;q&gt; for displaying quotations.",
+        code: `
+&lt;blockquote&gt;This is a blockquote for long quotes.&lt;/blockquote&gt;
+&lt;q&gt;This is an inline quote.&lt;/q&gt;
+        `
+    },
+    comments: {
+        title: "HTML Comments",
+        description: "Comments are ignored by the browser and are used to add notes to the code. They start with &lt;!-- and end with --&gt;.",
+        code: `
+&lt;!-- This is a comment --&gt;
+&lt;p&gt;This is visible text.&lt;/p&gt;
+        `
+    },
+    colors: {
+        title: "HTML Colors",
+        description: "HTML allows you to specify colors using names, HEX codes, RGB values, or HSL values.",
+        code: `
+&lt;p style="color: red;"&gt;This text is red.&lt;/p&gt;
+&lt;p style="color: #00FF00;"&gt;This text is green (HEX).&lt;/p&gt;
+&lt;p style="color: rgb(0, 0, 255);"&gt;This text is blue (RGB).&lt;/p&gt;
+        `
+    },
+    css: {
+        title: "HTML CSS",
+        description: "CSS (Cascading Style Sheets) is used to style HTML elements. It can be added inline, internally, or externally.",
+        code: `
+&lt;style&gt;
+  body {
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+&lt;/style&gt;
+
+&lt;p&gt;This paragraph is styled with internal CSS.&lt;/p&gt;
+        `
+    },
+    links: {
+        title: "HTML Links",
+        description: "HTML links are created using the &lt;a&gt; tag. They can link to other pages, sections, or external websites.",
+        code: `
+&lt;a href="https://www.example.com"&gt;Visit Example&lt;/a&gt;
+&lt;a href="#section1"&gt;Go to Section 1&lt;/a&gt;
+&lt;a href="https://example.com" target="_blank"&gt;Open in New Tab&lt;/a&gt;
+        `
+    },
+    images: {
+        title: "HTML Images",
+        description: "Images are added to web pages using the &lt;img&gt; tag with attributes like 'src' and 'alt'.",
+        code: `
+&lt;img src="image.jpg" alt="Sample Image" width="300"&gt;
+&lt;p&gt;This is an image with a width of 300px.&lt;/p&gt;
+        `
+    },
+    favicon: {
+        title: "HTML Favicon",
+        description: "A favicon is a small icon displayed on the browser tab. Add it using a &lt;link&gt; tag in the &lt;head&gt; section.",
+        code: `
+&lt;head&gt;
+  &lt;link rel="icon" href="favicon.ico" type="image/x-icon"&gt;
+&lt;/head&gt;
+        `
+    },
+    pagetitle: {
+        title: "HTML Page Title",
+        description: "The title of the webpage is set using the &lt;title&gt; tag inside the &lt;head&gt; section.",
+        code: `
+&lt;head&gt;
+  &lt;title&gt;My Web Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p&gt;Check the browser tab to see the title.&lt;/p&gt;
+&lt;/body&gt;
+        `
+    },
+    tables: {
+        title: "HTML Tables",
+        description: "HTML tables are created using the &lt;table&gt; tag. Use &lt;tr&gt; for rows, &lt;td&gt; for cells, and &lt;th&gt; for headers.",
+        code: `
+&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Age&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Alice&lt;/td&gt;
+    &lt;td&gt;25&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Bob&lt;/td&gt;
+    &lt;td&gt;30&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+        `
+    },
+    lists: {
+        title: "HTML Lists",
+        description: "HTML supports ordered (&lt;ol&gt;) and unordered (&lt;ul&gt;) lists. Each list item is added using the &lt;li&gt; tag.",
+        code: `
+&lt;h3&gt;Ordered List&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;First item&lt;/li&gt;
+  &lt;li&gt;Second item&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3&gt;Unordered List&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Item A&lt;/li&gt;
+  &lt;li&gt;Item B&lt;/li&gt;
+&lt;/ul&gt;
+        `
+    },
+    blockinline: {
+        title: "HTML Block & Inline",
+        description: "HTML elements are either block-level (start on a new line) or inline (do not start on a new line).",
+        code: `
+&lt;div&gt;This is a block-level element.&lt;/div&gt;
+&lt;span&gt;This is an inline element inside a paragraph.&lt;/span&gt;
+&lt;p&gt;Paragraphs are also block-level elements.&lt;/p&gt;
+        `
+    },
+    div: {
+        title: "HTML Div",
+        description: "The &lt;div&gt; element is a container used to group HTML elements together.",
+        code: `
+&lt;div style="background-color: lightblue;"&gt;
+  &lt;h2&gt;This is a &lt;div&gt;&lt;/h2&gt;
+  &lt;p&gt;You can use &lt;div&gt; to group elements and apply styles.&lt;/p&gt;
+&lt;/div&gt;
+        `
+    },
+    classes: {
+        title: "HTML Classes",
+        description: "The class attribute is used to define reusable styles or behaviors for multiple elements.",
+        code: `
+&lt;style&gt;
+  .highlight {
+    color: red;
+    font-weight: bold;
+  }
+&lt;/style&gt;
+
+&lt;p class="highlight"&gt;This paragraph is styled with a class.&lt;/p&gt;
+&lt;p&gt;This one is not.&lt;/p&gt;
+        `
+    },
+    id: {
+        title: "HTML Id",
+        description: "The id attribute is used to uniquely identify an element. Each id must be unique in the document.",
+        code: `
+&lt;style&gt;
+  #unique {
+    color: blue;
+    text-decoration: underline;
+  }
+&lt;/style&gt;
+
+&lt;p id="unique"&gt;This paragraph has a unique id.&lt;/p&gt;
+        `
+    },
+    iframes: {
+        title: "HTML Iframes",
+        description: "The &lt;iframe&gt; element is used to embed another HTML document within the current one.",
+        code: `
+&lt;iframe src="https://www.example.com" width="600" height="400"&gt;
+  Your browser does not support iframes.
+&lt;/iframe&gt;
+        `
+    },
+    javascript: {
+        title: "HTML JavaScript",
+        description: "JavaScript can be added to HTML to create dynamic and interactive web pages.",
+        code: `
+&lt;button onclick="alert('Hello, World!')"&gt;Click Me&lt;/button&gt;
+
+&lt;script&gt;
+  console.log('JavaScript is running!');
+&lt;/script&gt;
+        `
+    },
+    filepaths: {
+        title: "HTML File Paths",
+        description: "File paths specify the location of files (images, CSS, scripts) relative to the HTML file.",
+        code: `
+&lt;img src="images/picture.jpg" alt="Relative Path"&gt;
+&lt;a href="/docs/manual.pdf"&gt;Absolute Path&lt;/a&gt;
+        `
+    },
+    head: {
+        title: "HTML Head",
+        description: "The &lt;head&gt; section contains metadata, links to CSS, scripts, and the page title.",
+        code: `
+&lt;head&gt;
+  &lt;title&gt;Page Title&lt;/title&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+        `
+    },
+    layout: {
+        title: "HTML Layout",
+        description: "HTML layouts use elements like &lt;header&gt;, &lt;footer&gt;, &lt;section&gt;, and &lt;article&gt; to structure pages.",
+        code: `
+&lt;header&gt;
+  &lt;h1&gt;Website Header&lt;/h1&gt;
+&lt;/header&gt;
+&lt;section&gt;
+  &lt;h2&gt;Main Section&lt;/h2&gt;
+  &lt;p&gt;Content goes here.&lt;/p&gt;
+&lt;/section&gt;
+&lt;footer&gt;
+  &lt;p&gt;Website Footer&lt;/p&gt;
+&lt;/footer&gt;
+        `
+    },
+    responsive: {
+        title: "HTML Responsive",
+        description: "Responsive design ensures web pages adapt to different screen sizes. Use the viewport meta tag and CSS media queries.",
+        code: `
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+
+&lt;style&gt;
+  @media (max-width: 600px) {
+    body {
+      background-color: lightgray;
+    }
+  }
+&lt;/style&gt;
+
+&lt;p&gt;Resize the browser window to see the effect.&lt;/p&gt;
+        `
+    },
+    computercode: {
+        title: "HTML Computercode",
+        description: "HTML provides tags like &lt;code&gt;, &lt;pre&gt;, and &lt;kbd&gt; to display computer code and keyboard input.",
+        code: `
+&lt;pre&gt;
+  &lt;code&gt;
+    function greet() {
+      console.log('Hello, World!');
+    }
+  &lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;Press &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;S&lt;/kbd&gt; to save.&lt;/p&gt;
+        `
+    },
+    semantics: {
+        title: "HTML Semantics",
+        description: "Semantic HTML uses elements that have meaningful names to describe their purpose and structure in a document.",
+        code: `
+&lt;header&gt;
+  &lt;h1&gt;Website Header&lt;/h1&gt;
+&lt;/header&gt;
+&lt;article&gt;
+  &lt;h2&gt;Article Title&lt;/h2&gt;
+  &lt;p&gt;This is the article content.&lt;/p&gt;
+&lt;/article&gt;
+&lt;footer&gt;
+  &lt;p&gt;Website Footer&lt;/p&gt;
+&lt;/footer&gt;
+        `
+    },
+    styleguide: {
+        title: "HTML Style Guide",
+        description: "An HTML style guide outlines best practices for writing clean and consistent HTML code.",
+        code: `
+&lt;!-- Use clear and descriptive names for classes and IDs --&gt;
+&lt;div class="main-header"&gt;
+  &lt;h1&gt;Header&lt;/h1&gt;
+&lt;/div&gt;
+
+&lt;!-- Close all tags properly --&gt;
+&lt;br /&gt;
+
+&lt;!-- Indent nested elements for readability --&gt;
+&lt;ul&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;
+        `
+    },
+    entities: {
+        title: "HTML Entities",
+        description: "HTML entities are used to display reserved characters like `<`, `>` and others in web pages.",
+        code: `
+&lt;p&gt;Less than: &amp;lt;&lt;/p&gt;
+&lt;p&gt;Greater than: &amp;gt;&lt;/p&gt;
+&lt;p&gt;Ampersand: &amp;amp;&lt;/p&gt;
+        `
+    },
+    symbols: {
+        title: "HTML Symbols",
+        description: "HTML provides a wide range of symbols that can be displayed using entity codes.",
+        code: `
+&lt;p&gt;Heart: &amp;hearts;&lt;/p&gt;
+&lt;p&gt;Registered: &amp;reg;&lt;/p&gt;
+&lt;p&gt;Trademark: &amp;trade;&lt;/p&gt;
+        `
+    },
+    emojis: {
+        title: "HTML Emojis",
+        description: "Emojis can be displayed using Unicode or by directly copying them into HTML.",
+        code: `
+&lt;p&gt;Smiley: 😀&lt;/p&gt;
+&lt;p&gt;Thumbs Up: 👍&lt;/p&gt;
+&lt;p&gt;Heart: ❤️&lt;/p&gt;
+        `
+    },
+    charsets: {
+        title: "HTML Charsets",
+        description: "The charset meta tag specifies the character encoding for the HTML document, commonly UTF-8.",
+        code: `
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+&lt;/head&gt;
+
+&lt;p&gt;UTF-8 supports a wide range of characters, including special symbols and emojis.&lt;/p&gt;
+        `
+    },
+    urlencode: {
+        title: "HTML URL Encode",
+        description: "URL encoding replaces unsafe characters in a URL with percent-encoded characters.",
+        code: `
+&lt;p&gt;Space: %20&lt;/p&gt;
+&lt;p&gt;Ampersand: %26&lt;/p&gt;
+&lt;p&gt;Example: https://example.com/search?q=hello%20world&lt;/p&gt;
+        `
+    }
+};
+
+
+
+        // Function to Load Content
+        function loadContent(section) {
+            const mainContent = document.getElementById('main-content');
+            const content = contentData[section];
+            if (content) {
+                mainContent.innerHTML = `
+                    <h1>${content.title}</h1>
+                    <p class="description">${content.description}</p>
+                    <div class="code-block">${content.code}</div>
+                `;
+            } else {
+                mainContent.innerHTML = "<p>Content not found.</p>";
+            }
+        }
+    </script>
+
+</body>
+</html>

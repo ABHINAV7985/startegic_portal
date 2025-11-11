@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Tutorials</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        .sidebar h2 {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 0;
+            border-bottom: 1px solid #444;
+        }
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        .code-block {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-left: 4px solid #007BFF;
+            font-family: monospace;
+            white-space: pre-wrap;
+            margin-top: 10px;
+        }
+        .description {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>JavaScript Tutorials</h2>
+        <a href="#" onclick="loadContent('home')">JS HOME</a>
+        <a href="#" onclick="loadContent('intro')">JS Introduction</a>
+        <a href="#" onclick="loadContent('whereTo')">JS Where To</a>
+        <a href="#" onclick="loadContent('output')">JS Output</a>
+        <a href="#" onclick="loadContent('statements')">JS Statements</a>
+        <a href="#" onclick="loadContent('syntax')">JS Syntax</a>
+        <a href="#" onclick="loadContent('comments')">JS Comments</a>
+        <a href="#" onclick="loadContent('variables')">JS Variables</a>
+        <a href="#" onclick="loadContent('let')">JS Let</a>
+        <a href="#" onclick="loadContent('const')">JS Const</a>
+        <a href="#" onclick="loadContent('operators')">JS Operators</a>
+        <a href="#" onclick="loadContent('arithmetic')">JS Arithmetic</a>
+        <a href="#" onclick="loadContent('assignment')">JS Assignment</a>
+        <a href="#" onclick="loadContent('dataTypes')">JS Data Types</a>
+        <a href="#" onclick="loadContent('functions')">JS Functions</a>
+        <a href="#" onclick="loadContent('objects')">JS Objects</a>
+        <a href="#" onclick="loadContent('objectProperties')">JS Object Properties</a>
+        <a href="#" onclick="loadContent('objectMethods')">JS Object Methods</a>
+        <a href="#" onclick="loadContent('objectDisplay')">JS Object Display</a>
+        <a href="#" onclick="loadContent('objectConstructors')">JS Object Constructors</a>
+        <a href="#" onclick="loadContent('events')">JS Events</a>
+        <a href="#" onclick="loadContent('strings')">JS Strings</a>
+        <a href="#" onclick="loadContent('stringMethods')">JS String Methods</a>
+        <a href="#" onclick="loadContent('stringSearch')">JS String Search</a>
+        <a href="#" onclick="loadContent('stringTemplates')">JS String Templates</a>
+        <a href="#" onclick="loadContent('numbers')">JS Numbers</a>
+        <a href="#" onclick="loadContent('bigInt')">JS BigInt</a>
+        <a href="#" onclick="loadContent('numberMethods')">JS Number Methods</a>
+        <a href="#" onclick="loadContent('numberProperties')">JS Number Properties</a>
+        <a href="#" onclick="loadContent('arrays')">JS Arrays</a>
+        <a href="#" onclick="loadContent('arrayMethods')">JS Array Methods</a>
+        <a href="#" onclick="loadContent('arraySearch')">JS Array Search</a>
+        <a href="#" onclick="loadContent('arraySort')">JS Array Sort</a>
+        <a href="#" onclick="loadContent('arrayIteration')">JS Array Iteration</a>
+        <a href="#" onclick="loadContent('arrayConst')">JS Array Const</a>
+        <a href="#" onclick="loadContent('dates')">JS Dates</a>
+        <a href="#" onclick="loadContent('dateFormats')">JS Date Formats</a>
+        <a href="#" onclick="loadContent('dateGetMethods')">JS Date Get Methods</a>
+        <a href="#" onclick="loadContent('dateSetMethods')">JS Date Set Methods</a>
+        <a href="#" onclick="loadContent('math')">JS Math</a>
+        <a href="#" onclick="loadContent('random')">JS Random</a>
+        <a href="#" onclick="loadContent('booleans')">JS Booleans</a>
+        <a href="#" onclick="loadContent('comparisons')">JS Comparisons</a>
+        <a href="#" onclick="loadContent('ifElse')">JS If Else</a>
+        <a href="#" onclick="loadContent('switch')">JS Switch</a>
+        <a href="#" onclick="loadContent('loopFor')">JS Loop For</a>
+        <a href="#" onclick="loadContent('loopForIn')">JS Loop For In</a>
+        <a href="#" onclick="loadContent('loopForOf')">JS Loop For Of</a>
+        <a href="#" onclick="loadContent('loopWhile')">JS Loop While</a>
+        <a href="#" onclick="loadContent('break')">JS Break</a>
+        <a href="#" onclick="loadContent('iterables')">JS Iterables</a>
+        <a href="#" onclick="loadContent('sets')">JS Sets</a>
+        <a href="#" onclick="loadContent('setMethods')">JS Set Methods</a>
+        <a href="#" onclick="loadContent('maps')">JS Maps</a>
+        <a href="#" onclick="loadContent('mapMethods')">JS Map Methods</a>
+        <a href="#" onclick="loadContent('typeof')">JS Typeof</a>
+        <a href="#" onclick="loadContent('typeConversion')">JS Type Conversion</a>
+        <a href="#" onclick="loadContent('destructuring')">JS Destructuring</a>
+        <a href="#" onclick="loadContent('bitwise')">JS Bitwise</a>
+        <a href="#" onclick="loadContent('regexp')">JS RegExp</a>
+        <a href="#" onclick="loadContent('precedence')">JS Precedence</a>
+        <a href="#" onclick="loadContent('errors')">JS Errors</a>
+        <a href="#" onclick="loadContent('scope')">JS Scope</a>
+        <a href="#" onclick="loadContent('hoisting')">JS Hoisting</a>
+        <a href="#" onclick="loadContent('strictMode')">JS Strict Mode</a>
+        <a href="#" onclick="loadContent('thisKeyword')">JS this Keyword</a>
+        <a href="#" onclick="loadContent('arrowFunction')">JS Arrow Function</a>
+        <a href="#" onclick="loadContent('classes')">JS Classes</a>
+        <a href="#" onclick="loadContent('modules')">JS Modules</a>
+        <a href="#" onclick="loadContent('json')">JS JSON</a>
+        <a href="#" onclick="loadContent('debugging')">JS Debugging</a>
+        <a href="#" onclick="loadContent('styleGuide')">JS Style Guide</a>
+        <a href="#" onclick="loadContent('bestPractices')">JS Best Practices</a>
+        <a href="#" onclick="loadContent('mistakes')">JS Mistakes</a>
+        <a href="#" onclick="loadContent('performance')">JS Performance</a>
+        <a href="#" onclick="loadContent('reservedWords')">JS Reserved Words</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="main-content">
+        <h1>Welcome to the JavaScript Tutorial</h1>
+        <p>Select a topic from the sidebar to get started.</p>
+    </div>
+
+    <script>
+        // Content Data for JavaScript topics
+        const contentData = {
+            home: {
+        title: "JS HOME",
+        description: "Welcome to the JavaScript tutorial! Learn everything about JavaScript from basic syntax to advanced topics.",
+        code: ""
+    },
+    intro: {
+        title: "JS Introduction",
+        description: "JavaScript is a programming language used to create dynamic content on web pages.",
+        code: `
+&lt;script&gt;
+  console.log('Hello, World!');
+&lt;/script&gt;
+        `
+    },
+    whereTo: {
+        title: "JS Where To",
+        description: "You can write JavaScript in HTML files between the &lt;script&gt; tags or in external .js files.",
+        code: `
+&lt;script src="app.js"&gt;&lt;/script&gt;
+        `
+    },
+    output: {
+        title: "JS Output",
+        description: "JavaScript can output data to the console, alert boxes, or HTML content.",
+        code: `
+console.log('Output to console');
+alert('This is an alert!');
+document.getElementById('demo').innerHTML = 'Output to HTML';
+        `
+    },
+    statements: {
+        title: "JS Statements",
+        description: "A JavaScript statement is a single operation, like a variable assignment or function call.",
+        code: `
+let x = 5; // Assignment statement
+function greet() { console.log('Hello!'); } // Function call
+greet(); // Calling the function
+        `
+    },
+    syntax: {
+        title: "JS Syntax",
+        description: "JavaScript syntax defines the rules for writing JavaScript code.",
+        code: `
+let x = 5; // A variable declaration
+console.log(x); // Print value
+        `
+    },
+    comments: {
+        title: "JS Comments",
+        description: "Comments are used to explain code or prevent execution. Single-line comments start with // and multi-line comments use /* */.",
+        code: `
+  // This is a single-line comment
+  /* This is a 
+     multi-line comment */
+        `
+    },
+    variables: {
+        title: "JS Variables",
+        description: "Variables store data values in JavaScript. You can use `let`, `const`, or `var` to declare variables.",
+        code: `
+let name = 'John'; // Declaring a variable using let
+const pi = 3.14;   // Declaring a constant variable
+var age = 30;      // Declaring a variable using var
+        `
+    },
+    let: {
+        title: "JS Let",
+        description: "`let` is used to declare block-scoped variables in JavaScript.",
+        code: `
+let x = 10;
+if (x > 5) {
+  let y = 20;
+  console.log(y); // Outputs 20
+}
+console.log(x); // Outputs 10
+// console.log(y); // Error: y is not defined outside the block
+        `
+    },
+    const: {
+        title: "JS Const",
+        description: "`const` is used to declare constants that cannot be reassigned.",
+        code: `
+const pi = 3.14;
+pi = 3.14159; // Error: Assignment to constant variable
+        `
+    },
+    operators: {
+        title: "JS Operators",
+        description: "Operators perform operations on variables and values, like arithmetic or comparison.",
+        code: `
+let x = 5;
+let y = 10;
+let sum = x + y;  // Addition operator
+let isEqual = (x == y); // Comparison operator
+        `
+    },
+    arithmetic: {
+        title: "JS Arithmetic",
+        description: "JavaScript supports arithmetic operations like addition, subtraction, multiplication, division, and more.",
+        code: `
+let a = 5;
+let b = 2;
+console.log(a + b); // Addition
+console.log(a - b); // Subtraction
+console.log(a * b); // Multiplication
+console.log(a / b); // Division
+        `
+    },
+    assignment: {
+        title: "JS Assignment",
+        description: "Assignment operators assign values to variables.",
+        code: `
+let x = 10;
+x += 5; // Same as x = x + 5;
+console.log(x); // Outputs 15
+        `
+    },
+    dataTypes: {
+        title: "JS Data Types",
+        description: "JavaScript has various data types, including strings, numbers, booleans, objects, and more.",
+        code: `
+let name = "John"; // String
+let age = 30;      // Number
+let isActive = true; // Boolean
+let person = {name: "John", age: 30}; // Object
+        `
+    },
+    functions: {
+        title: "JS Functions",
+        description: "Functions allow you to define reusable blocks of code.",
+        code: `
+function greet(name) {
+  console.log('Hello, ' + name);
+}
+greet('John'); // Outputs: Hello, John
+        `
+    },
+    objects: {
+        title: "JS Objects",
+        description: "Objects in JavaScript store collections of data using key-value pairs.",
+        code: `
+let person = {
+  name: "John",
+  age: 30,
+  greet: function() {
+    console.log('Hello!');
+  }
+};
+console.log(person.name); // Outputs: John
+person.greet(); // Outputs: Hello!
+        `
+    },
+    objectProperties: {
+        title: "JS Object Properties",
+        description: "Object properties are values associated with keys in an object.",
+        code: `
+let person = {
+  name: "John",
+  age: 30
+};
+console.log(person.name); // Outputs: John
+        `
+    },
+    objectMethods: {
+        title: "JS Object Methods",
+        description: "Methods are functions that are stored as object properties.",
+        code: `
+let person = {
+  name: "John",
+  greet: function() {
+    console.log('Hello, ' + this.name);
+  }
+};
+person.greet(); // Outputs: Hello, John
+        `
+    },
+    objectDisplay: {
+        title: "JS Object Display",
+        description: "You can display an object as a string using `JSON.stringify()`.",
+        code: `
+let person = {name: "John", age: 30};
+console.log(JSON.stringify(person)); // Outputs: {"name":"John","age":30}
+        `
+    },
+    objectConstructors: {
+        title: "JS Object Constructors",
+        description: "Constructors allow creating multiple instances of an object with the same properties and methods.",
+        code: `
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+  this.greet = function() {
+    console.log('Hello, ' + this.name);
+  };
+}
+let person1 = new Person('John', 30);
+person1.greet(); // Outputs: Hello, John
+        `
+    },
+    events: {
+        title: "JS Events",
+        description: "JavaScript can respond to user actions like clicks, keyboard presses, and mouse movements.",
+        code: `
+document.getElementById('myButton').addEventListener('click', function() {
+  alert('Button clicked!');
+});
+        `
+    },
+    strings: {
+        title: "JS Strings",
+        description: "Strings are sequences of characters used to represent text in JavaScript.",
+        code: `
+let greeting = "Hello, World!";
+console.log(greeting); // Outputs: Hello, World!
+        `
+    },
+    stringMethods: {
+        title: "JS String Methods",
+        description: "Strings in JavaScript come with various built-in methods for manipulation.",
+        code: `
+let text = "Hello, World!";
+console.log(text.length); // Outputs: 13
+console.log(text.toUpperCase()); // Outputs: HELLO, WORLD!
+        `
+    },
+    stringSearch: {
+        title: "JS String Search",
+        description: "Use string search methods like `indexOf()` and `includes()` to find text within a string.",
+        code: `
+let phrase = "Hello, World!";
+console.log(phrase.indexOf('World')); // Outputs: 7
+console.log(phrase.includes('Hello')); // Outputs: true
+        `
+    },
+    stringTemplates: {
+        title: "JS String Templates",
+        description: "Template literals allow embedding expressions inside strings using backticks (``).",
+        code: `
+let name = "John";
+let greeting = \`Hello, \${name}!\`;
+console.log(greeting); // Outputs: Hello, John!
+        `
+    },
+    numbers: {
+        title: "JS Numbers",
+        description: "Numbers are numerical data types in JavaScript, supporting both integers and floating-point numbers.",
+        code: `
+let age = 30;
+let pi = 3.14;
+console.log(age + pi); // Outputs: 33.14
+        `
+    },
+    bigInt: {
+        title: "JS BigInt",
+        description: "BigInt is a new data type that allows representation of large integers beyond the limits of `Number`.",
+        code: `
+let largeNumber = 1234567890123456789012345678901234567890n;
+console.log(largeNumber); // Outputs: 1234567890123456789012345678901234567890n
+        `
+    },
+    numberMethods: {
+        title: "JS Number Methods",
+        description: "JavaScript provides various methods for number manipulation, like `toFixed()`, `parseInt()`, etc.",
+        code: `
+let num = 3.14159;
+console.log(num.toFixed(2)); // Outputs: 3.14
+        `
+    },
+    numberProperties: {
+        title: "JS Number Properties",
+        description: "JavaScript has some number properties like `MAX_VALUE`, `MIN_VALUE`, etc.",
+        code: `
+console.log(Number.MAX_VALUE); // Outputs the maximum possible number
+console.log(Number.MIN_VALUE); // Outputs the minimum positive number
+        `
+    },
+    arrays: {
+        title: "JS Arrays",
+        description: "Arrays are used to store multiple values in a single variable.",
+        code: `
+let fruits = ["Apple", "Banana", "Orange"];
+console.log(fruits[0]); // Outputs: Apple
+        `
+    },
+    arrayMethods: {
+        title: "JS Array Methods",
+        description: "Arrays come with several built-in methods like `push()`, `pop()`, `shift()`, and more.",
+        code: `
+let fruits = ["Apple", "Banana"];
+fruits.push("Orange"); // Adds an element
+console.log(fruits); // Outputs: ["Apple", "Banana", "Orange"]
+        `
+    },
+    arraySearch: {
+        title: "JS Array Search",
+        description: "Search for elements in an array using methods like `indexOf()` and `includes()`.",
+        code: `
+let fruits = ["Apple", "Banana", "Orange"];
+console.log(fruits.indexOf("Banana")); // Outputs: 1
+console.log(fruits.includes("Grapes")); // Outputs: false
+        `
+    },
+    arraySort: {
+        title: "JS Array Sort",
+        description: "Arrays can be sorted using the `sort()` method.",
+        code: `
+let numbers = [3, 1, 4, 1, 5, 9];
+numbers.sort();
+console.log(numbers); // Outputs: [1, 1, 3, 4, 5, 9]
+        `
+    },
+    arrayIteration: {
+        title: "JS Array Iteration",
+        description: "Use methods like `forEach()`, `map()`, and `filter()` to iterate over arrays.",
+        code: `
+let fruits = ["Apple", "Banana", "Orange"];
+fruits.forEach(function(item) {
+  console.log(item);
+});
+// Outputs: Apple, Banana, Orange
+        `
+    },
+    arrayConst: {
+        title: "JS Array Const",
+        description: "`const` arrays cannot be reassigned, but their elements can be modified.",
+        code: `
+const fruits = ["Apple", "Banana"];
+fruits[0] = "Orange"; // Works fine
+fruits = ["Grapes", "Mango"]; // Error: Assignment to constant variable.
+        `
+    },
+    dates: {
+        title: "JS Dates",
+        description: "JavaScript provides built-in `Date` objects to handle dates and times.",
+        code: `
+let now = new Date();
+console.log(now); // Outputs current date and time
+        `
+    },
+    dateFormats: {
+        title: "JS Date Formats",
+        description: "JavaScript date formats can be customized using methods like `toLocaleDateString()`.",
+        code: `
+let now = new Date();
+console.log(now.toLocaleDateString()); // Outputs date in a readable format
+        `
+    },
+    dateGetMethods: {
+        title: "JS Date Get Methods",
+        description: "You can extract various parts of a date using `getFullYear()`, `getMonth()`, etc.",
+        code: `
+let now = new Date();
+console.log(now.getFullYear()); // Outputs the current year
+console.log(now.getMonth()); // Outputs the current month (0-11)
+        `
+    },
+    dateSetMethods: {
+        title: "JS Date Set Methods",
+        description: "You can modify a date using `setFullYear()`, `setMonth()`, and other set methods.",
+        code: `
+let now = new Date();
+now.setFullYear(2025);
+console.log(now); // Outputs new date with year set to 2025
+        `
+    },
+    math: {
+        title: "JS Math",
+        description: "JavaScript provides the `Math` object for mathematical operations like `round()`, `floor()`, `random()`, etc.",
+        code: `
+let randomNum = Math.random();
+console.log(randomNum); // Outputs a random number between 0 and 1
+        `
+    },
+    random: {
+        title: "JS Random",
+        description: "The `Math.random()` method generates a random number between 0 (inclusive) and 1 (exclusive).",
+        code: `
+let randomNum = Math.random();
+console.log(randomNum); // Outputs a random number
+        `
+    },
+    booleans: {
+        title: "JS Booleans",
+        description: "Booleans are simple values that represent `true` or `false`.",
+        code: `
+let isActive = true;
+let isComplete = false;
+console.log(isActive); // Outputs: true
+        `
+    },
+    comparisons: {
+        title: "JS Comparisons",
+        description: "Comparison operators are used to compare values, like `==`, `===`, `!=`, etc.",
+        code: `
+let x = 10;
+let y = 20;
+console.log(x == y); // Outputs: false
+console.log(x != y); // Outputs: true
+        `
+    },
+    ifElse: {
+        title: "JS If Else",
+        description: "Use `if-else` statements to conditionally execute code.",
+        code: `
+let age = 18;
+if (age >= 18) {
+  console.log('Adult');
+} else {
+  console.log('Minor');
+}
+        `
+    },
+    switch: {
+        title: "JS Switch",
+        description: "The `switch` statement is used to evaluate a single expression for multiple values.",
+        code: `
+let day = 3;
+switch (day) {
+  case 1:
+    console.log('Monday');
+    break;
+  case 2:
+    console.log('Tuesday');
+    break;
+  case 3:
+    console.log('Wednesday');
+    break;
+  default:
+    console.log('Weekend');
+}
+        `
+    },
+    loopFor: {
+        title: "JS Loop For",
+        description: "A `for` loop is used to repeat code a set number of times.",
+        code: `
+for (let i = 0; i < 5; i++) {
+  console.log(i); // Outputs: 0, 1, 2, 3, 4
+}
+        `
+    },
+    loopForIn: {
+        title: "JS Loop For In",
+        description: "The `for-in` loop is used to iterate over the properties of an object.",
+        code: `
+let person = {name: "John", age: 30};
+for (let key in person) {
+  console.log(key + ": " + person[key]);
+}
+        `
+    },
+    loopForOf: {
+        title: "JS Loop For Of",
+        description: "The `for-of` loop is used to iterate over elements of an array or iterable objects.",
+        code: `
+let fruits = ["Apple", "Banana", "Orange"];
+for (let fruit of fruits) {
+  console.log(fruit);
+}
+        `
+    },
+    loopWhile: {
+        title: "JS Loop While",
+        description: "A `while` loop repeats code as long as the specified condition is true.",
+        code: `
+let i = 0;
+while (i < 5) {
+  console.log(i);
+  i++;
+}
+        `
+    },
+    break: {
+        title: "JS Break",
+        description: "The `break` statement exits a loop or switch statement early.",
+        code: `
+for (let i = 0; i < 5; i++) {
+  if (i === 3) {
+    break;
+  }
+  console.log(i);
+}
+        `
+    },
+    iterables: {
+        title: "JS Iterables",
+        description: "Iterables are objects that can be iterated over with a loop (e.g., arrays, strings, maps).",
+        code: `
+let arr = [1, 2, 3];
+for (let value of arr) {
+  console.log(value);
+}
+        `
+    },
+    sets: {
+        title: "JS Sets",
+        description: "A Set is a collection of unique values in JavaScript.",
+        code: `
+let uniqueNumbers = new Set([1, 2, 3, 3, 4]);
+console.log(uniqueNumbers); // Outputs: Set { 1, 2, 3, 4 }
+        `
+    },
+    setMethods: {
+        title: "JS Set Methods",
+        description: "Sets have built-in methods like `add()`, `has()`, and `delete()`.",
+        code: `
+let set = new Set();
+set.add(1);
+set.add(2);
+console.log(set.has(1)); // Outputs: true
+set.delete(1);
+console.log(set.has(1)); // Outputs: false
+        `
+    },
+    maps: {
+        title: "JS Maps",
+        description: "A Map is a collection of key-value pairs, where keys can be any data type.",
+        code: `
+let map = new Map();
+map.set("name", "John");
+map.set("age", 30);
+console.log(map.get("name")); // Outputs: John
+        `
+    },
+    mapMethods: {
+        title: "JS Map Methods",
+        description: "Maps have built-in methods like `set()`, `get()`, `delete()`, and more.",
+        code: `
+let map = new Map();
+map.set("name", "John");
+console.log(map.has("name")); // Outputs: true
+map.delete("name");
+console.log(map.has("name")); // Outputs: false
+        `
+    },
+    typeof: {
+        title: "JS Typeof",
+        description: "The `typeof` operator returns a string representing the type of a variable.",
+        code: `
+let x = "Hello";
+console.log(typeof x); // Outputs: string
+        `
+    },
+    typeConversion: {
+        title: "JS Type Conversion",
+        description: "Type conversion is the process of converting one data type to another.",
+        code: `
+let num = '123';
+let convertedNum = Number(num);
+console.log(convertedNum); // Outputs: 123
+        `
+    },
+    destructuring: {
+        title: "JS Destructuring",
+        description: "Destructuring allows you to extract values from arrays or properties from objects.",
+        code: `
+let person = {name: "John", age: 30};
+let {name, age} = person;
+console.log(name); // Outputs: John
+console.log(age); // Outputs: 30
+        `
+    },
+    bitwise: {
+        title: "JS Bitwise",
+        description: "Bitwise operators are used to manipulate binary numbers at the bit level.",
+        code: `
+let x = 5; // Binary: 101
+let y = 3; // Binary: 011
+console.log(x & y); // Outputs: 1 (Bitwise AND)
+        `
+    },
+    regexp: {
+        title: "JS RegExp",
+        description: "Regular Expressions (RegEx) are patterns used to match character combinations in strings.",
+        code: `
+let regex = /hello/;
+console.log(regex.test("Hello World")); // Outputs: true
+        `
+    },
+    precedence: {
+        title: "JS Precedence",
+        description: "Operator precedence determines the order in which operators are evaluated.",
+        code: `
+let result = 5 + 3 * 2; // Multiplication has higher precedence
+console.log(result); // Outputs: 11
+        `
+    },
+    errors: {
+        title: "JS Errors",
+        description: "JavaScript has built-in error handling methods like `try-catch` for exceptions.",
+        code: `
+try {
+  let x = y; // Undefined variable
+} catch (error) {
+  console.log(error.message); // Outputs: y is not defined
+}
+        `
+    },
+    scope: {
+        title: "JS Scope",
+        description: "Scope defines the accessibility of variables in different parts of the code.",
+        code: `
+let globalVar = "I am global";
+function test() {
+  let localVar = "I am local";
+  console.log(globalVar); // Outputs: I am global
+  console.log(localVar);  // Outputs: I am local
+}
+test();
+console.log(localVar); // Error: localVar is not defined outside the function
+        `
+    },
+    hoisting: {
+        title: "JS Hoisting",
+        description: "Hoisting is the JavaScript behavior of moving declarations to the top of their scope.",
+        code: `
+console.log(x); // Outputs: undefined
+var x = 5;
+        `
+    },
+    strictMode: {
+        title: "JS Strict Mode",
+        description: "Strict mode is a way to opt into a restricted version of JavaScript that helps avoid errors.",
+        code: `
+'use strict';
+let y = 3.14;
+y = 42; // No error in strict mode
+        `
+    },
+    thisKeyword: {
+        title: "JS this Keyword",
+        description: "The `this` keyword refers to the context of the current execution.",
+        code: `
+function show() {
+  console.log(this);
+}
+show(); // Outputs: the global object (window in browsers)
+        `
+    },
+    arrowFunction: {
+        title: "JS Arrow Function",
+        description: "Arrow functions provide a more concise syntax for writing functions.",
+        code: `
+let greet = (name) => {
+  return 'Hello ' + name;
+};
+console.log(greet("John")); // Outputs: Hello John
+        `
+    },
+    classes: {
+        title: "JS Classes",
+        description: "Classes provide a blueprint for creating objects with properties and methods.",
+        code: `
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  greet() {
+    console.log('Hello, ' + this.name);
+  }
+}
+let person1 = new Person('John', 30);
+person1.greet(); // Outputs: Hello, John
+        `
+    },
+    modules: {
+        title: "JS Modules",
+        description: "Modules allow you to split your JavaScript code into smaller, reusable pieces.",
+        code: `
+import { greet } from './greet.js';
+greet();
+        `
+    },
+    json: {
+        title: "JS JSON",
+        description: "JavaScript Object Notation (JSON) is a format for storing and exchanging data.",
+        code: `
+let jsonData = '{"name":"John","age":30}';
+let person = JSON.parse(jsonData);
+console.log(person.name); // Outputs: John
+        `
+    },
+    debugging: {
+        title: "JS Debugging",
+        description: "Use `console.log()`, browser dev tools, and `debugger` to debug your code.",
+        code: `
+let x = 5;
+console.log(x); // Use browser console to inspect output
+        `
+    },
+    styleGuide: {
+        title: "JS Style Guide",
+        description: "Follow a consistent style guide for writing clean, readable code.",
+        code: `
+function greet() {
+  console.log('Hello, World!');
+}
+        `
+    },
+    bestPractices: {
+        title: "JS Best Practices",
+        description: "Best practices include using descriptive variable names, avoiding global variables, and more.",
+        code: `
+let userName = "John";
+function greet(userName) {
+  console.log('Hello, ' + userName);
+}
+greet(userName);
+        `
+    },
+    mistakes: {
+        title: "JS Mistakes",
+        description: "Avoid common mistakes like undeclared variables, type coercion issues, etc.",
+        code: `
+let x;
+console.log(x); // Outputs: undefined
+        `
+    },
+    performance: {
+        title: "JS Performance",
+        description: "Optimize performance by reducing DOM manipulations and using efficient algorithms.",
+        code: `
+let largeArray = [];
+for (let i = 0; i < 1000000; i++) {
+  largeArray.push(i);
+}
+console.log(largeArray.length); // Outputs: 1000000
+        `
+    },
+    reservedWords: {
+        title: "JS Reserved Words",
+        description: "Reserved words are keywords that have special meaning in JavaScript and cannot be used as variable names.",
+        code: `
+let break = 5; // Error: 'break' is a reserved word
+        `
+    }
+        };
+
+        // Load Content Function
+        function loadContent(topic) {
+            const topicData = contentData[topic];
+            if (topicData) {
+                document.getElementById('main-content').innerHTML = `
+                    <h1>${topicData.title}</h1>
+                    <p>${topicData.description}</p>
+                    <pre class="code-block">${topicData.code}</pre>
+                `;
+            }
+        }
+    </script>
+
+</body>
+</html>

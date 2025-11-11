@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeHive</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo">
+            <img src="img/b1.jpg" alt="Logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="Index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="http://127.0.0.1:5000">Practice</a>
+            </li>
+            <li><a href="interview.html">Interview</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="auth-links">
+            <a href="login.html" class="btn">Login</a>
+            <a href="Sign.html" class="btn signup">Sign Up</a>
+        </div>
+        <hr>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="container">
+            <h1>Welcome to CodeHive</h1>
+            <p>Your ultimate destination to practice coding, prepare for interviews, and master programming skills.</p>
+            <a href="#problem-categories" class="btn btn-primary">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>What We Offer</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <i class="fas fa-book"></i> <!-- Icon for Practice Problems -->
+                    <h3>Practice Problems</h3>
+                    <p>Access a vast collection of problems across different topics and difficulty levels.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-comments"></i> <!-- Icon for Interview Prep -->
+                    <h3>Interview Prep</h3>
+                    <p>Prepare for your next technical interview with curated questions and mock interviews.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-trophy"></i> <!-- Icon for Contests -->
+                    <h3>Contests</h3>
+                    <p>Participate in live coding contests and improve your problem-solving skills in real-time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Problem Categories Section -->
+    <section class="problem-categories" id="problem-categories">
+        <div class="container">
+            <h2>Explore Topics</h2>
+            <div class="categories-grid">
+                <div class="category">
+                    <i class="fas fa-th-large"></i> <!-- Array icon -->
+                    <h4>Arrays</h4>
+                    <a href="arrays.html">Explore Problems</a>
+                </div>
+                <div class="category">
+                    <i class="fas fa-sync-alt"></i> <!-- Dynamic Programming icon -->
+                    <h4>Dynamic Programming</h4>
+                    <a href="dp.html">Explore Problems</a>
+                </div>
+                <div class="category">
+                    <i class="fas fa-chart-line"></i> <!-- Graphs icon -->
+                    <h4>Graphs</h4>
+                    <a href="graphs.html">Explore Problems</a>
+                </div>
+                <div class="category">
+                    <i class="fas fa-cogs"></i> <!-- Algorithms icon -->
+                    <h4>Algorithms</h4>
+                    <a href="algorithms.html">Explore Problems</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="course-container">
+        <div class="heading-container">
+            <h1 class="ikl">Learn to Code</h1>
+        </div>
+    
+        <div class="course-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg" alt="Python Icon" class="course-icon">
+            <div class="course-info">
+                <h3>Learn Python</h3>
+                <p>Get hands-on practice and nail down the fundamentals of Python to jumpstart your coding journey</p>
+                <span class="level">Beginner</span>
+                <div class="stats">
+                    <span>160k+ learners</span>
+                    <span class="rating">4.7 <i class="fas fa-star"></i></span>
+                </div>
+                <button class="course-btn">View this Course</button>
+            </div>
+        </div>
+        
+        <div class="course-card">
+            <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg" alt="Java Icon" class="course-icon">
+            <div class="course-info">
+                <h3>Learn Java</h3>
+                <p>Get practical experience coding in Java programming with this interactive and practical course</p>
+                <span class="level">Beginner</span>
+                <div class="stats">
+                    <span>108k+ learners</span>
+                    <span class="rating">4.7 <i class="fas fa-star"></i></span>
+                </div>
+                <button class="course-btn">View this Course</button>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" alt="C++ Icon" class="course-icon">
+            <div class="course-info">
+                <h3>Learn C++</h3>
+                <p>Join this interactive and hands-on C++ course to master the basic syntax of the language</p>
+                <span class="level">Beginner</span>
+                <div class="stats">
+                    <span>60k+ learners</span>
+                    <span class="rating">4.7 <i class="fas fa-star"></i></span>
+                </div>
+                <button class="course-btn">View this Course</button>
+            </div>
+        </div>
+    </div>
+<!-- Web Development Section -->
+<section class="web-development">
+    <div class="container">
+        <h2>Web Development</h2>
+        <div class="dev-grid">
+            <!-- HTML Card -->
+            <div class="dev-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML5 Icon" class="dev-icon">
+                <h3>HTML</h3>
+                <p>Learn the basics of HTML, the building block of web pages.</p>
+                <a href="html-course.html" class="btn btn-link">
+                    Learn More <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <!-- CSS Card -->
+            <div class="dev-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS3 Icon" class="dev-icon">
+                <h3>CSS</h3>
+                <p>Master CSS for styling and designing beautiful web pages.</p>
+                <a href="css-course.html" class="btn btn-link">
+                    Learn More <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <!-- JavaScript Card -->
+            <div class="dev-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript Icon" class="dev-icon">
+                <h3>JavaScript</h3>
+                <p>Dive into JavaScript to create interactive and dynamic web applications.</p>
+                <a href="javascript-course.html" class="btn btn-link">
+                    Learn More <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Users Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p>"CodeMaster helped me land my dream job. The problems and interview prep resources are top-notch!"</p>
+                    <span>- Jane Doe</span>
+                </div>
+                <div class="testimonial">
+                    <p>"I love the contests! They are challenging and a great way to improve my coding skills."</p>
+                    <span>- John Smith</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <h2>Follow Us On</h2>
+                <div class="social-icons">
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CodeHive. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+<script>document.querySelector('.btn-primary').addEventListener('click', function(event) {
+    event.preventDefault();  // Prevent the default anchor behavior
+
+    // Get the target section
+    const target = document.getElementById('problem-categories');
+
+    // Smoothly scroll to the target section
+    window.scrollTo({
+        top: target.offsetTop,  // Position of the target section
+        behavior: 'smooth'      // Smooth scrolling behavior
+    });
+});
+</script>
+</body>
+</html>

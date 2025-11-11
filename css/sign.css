@@ -1,0 +1,245 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full-page background and layout */
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../img/samuele-vigano-IrXosR7PXrA-unsplash.jpg'); /* Replace with your background image */
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+}
+
+/* Container holding the form and social login */
+.login-page {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Styling the form container for light mode */
+.form-container {
+    background-color: #fff; /* White background for light mode */
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    color: #333; /* Dark text for better readability */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Logo styling */
+.logo {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 36px;
+    color: #00aaff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Social login links */
+.social-login a {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+/* Google Login */
+.google-login {
+    background-color: #db4437; /* Google color */
+}
+
+/* GitHub Login */
+.github-login {
+    background-color: #333; /* GitHub color */
+}
+
+.social-login a i {
+    margin-right: 10px;
+}
+
+/* Hover effect for social login */
+.social-login a:hover {
+    opacity: 0.8;
+}
+
+/* Form styling */
+.register-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f7f7f7; /* Light grey background for input */
+    color: #333; /* Dark text color */
+}
+
+/* Register button styling */
+.register-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff; /* Primary blue color */
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register-btn:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+}
+
+/* Footer link */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.login-link {
+    color: #007bff; /* Blue color for the link */
+    text-decoration: none;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+@media (max-width: 600px) {
+    .form-container {
+        width: 90%;
+        max-width: 350px;
+    }
+}
+/* Slogan Section Styling */
+.slogan-container {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px;
+    color: #fff; /* White text for slogans */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.slogan {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 10px 0;
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: slideIn 1.5s forwards infinite; /* Infinite loop */
+    animation-delay: var(--animation-delay);
+}
+
+/* Define animation keyframes */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(100px); /* Move out after sliding in */
+    }
+}
+
+/* Delay animation for each slogan */
+.slogan:nth-child(1) {
+    --animation-delay: 5s;
+}
+.slogan:nth-child(2) {
+    --animation-delay: 5s;
+}
+.slogan:nth-child(3) {
+    --animation-delay: 1s;
+}
+
+/* Fade In Effect */
+.slogan-container .slogan {
+    animation: fadeIn 10s ease-in-out infinite;
+    opacity: 0;
+    animation-delay: 0s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Optional: Bounce effect for a more dynamic feel */
+.slogan-container .slogan:nth-child(odd) {
+    animation: bounceIn 10s ease-out forwards infinite;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ensuring the form stays in place */
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: 0;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    color: #333;
+    position: relative;
+    z-index: 10;
+}
+
+@media (max-width: 600px) {
+    .form-container {
+        width: 90%;
+        max-width: 350px;
+    }
+}

@@ -1,0 +1,123 @@
+/* Reset and Base Styles */
+body {
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    background-image: url('../img/b2.jpg'); /* Replace with your local image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Login Container */
+.login-container {
+    background-color: rgba(0, 0, 0, 0.75); /* Slightly transparent black background */
+    border-radius: 10px;
+    padding: 20px; /* Reduced padding */
+    width: 100%;
+    max-width: 350px; /* Reduced container width */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* Form Container */
+.form-container {
+    width: 100%;
+}
+
+/* Logo/Heading */
+.logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px; /* Reduced font size */
+    font-weight: bold;
+    color: #00aaff;
+    margin-bottom: 15px; /* Reduced margin */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+  gap: 20px; /* Reduced spacing between form elements */
+}
+
+label {
+    font-size: 13px; /* Reduced label size */
+    text-align: left;
+    color: #ccc;
+}
+
+input {
+    padding: 10px; /* Reduced input padding */
+    border: 1px solid #555;
+    border-radius: 6px; /* Slightly reduced border radius */
+    background-color: #1a1a1a;
+    color: #fff;
+    font-size: 13px; /* Reduced font size */
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+input:focus {
+    border-color: #00aaff;
+    box-shadow: 0 0 5px rgba(0, 170, 255, 0.5);
+}
+
+/* Buttons */
+button {
+    padding: 10px; /* Reduced button padding */
+    border: none;
+    border-radius: 6px; /* Reduced border radius */
+    font-size: 14px; /* Reduced font size */
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff;
+    background-color: #00aaff;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0088cc;
+}
+
+/* Signup Section */
+.signup {
+    margin-top: 10px; /* Reduced margin */
+    font-size: 13px; /* Reduced font size */
+    color: #ccc;
+}
+
+.signup a {
+    color: #00aaff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.signup a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-container {
+        width: 90%;
+        padding: 15px; /* Adjusted padding for smaller screens */
+    }
+
+    .logo {
+        font-size: 24px; /* Reduced logo size for smaller screens */
+    }
+
+    button {
+        font-size: 13px;
+    }
+}
