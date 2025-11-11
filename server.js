@@ -1,28 +1,21 @@
 const express = require("express");
 const path = require("path");
 const app = express();
+const port = process.env.PORT || 3000;
 
-// Absolute path to your project folder
-const rootDir = __dirname;
+// Serve static files (CSS, JS, images) from the current folder
+app.use(express.static(path.join(__dirname)));
 
-// Serve static files (HTML, CSS, JS, images)
-app.use(express.static(rootDir));
+// Optional: serve CSS/JS/images from subfolders if needed
+app.use('/css', express.static(path.join(__dirname, 'css')));
+app.use('/img', express.static(path.join(__dirname, 'img')));
+app.use('/js', express.static(path.join(__dirname, 'js')));
 
-// Serve any HTML file directly by name (case-insensitive)
-app.get("/:page?", (req, res) => {
-  let page = req.params.page ? req.params.page + ".html" : "Index.html";
-
-  // Try both lowercase and original case filenames
-  const filePath = path.join(rootDir, page);
-  const altPath = path.join(rootDir, page.charAt(0).toUpperCase() + page.slice(1));
-
-  res.sendFile(filePath, (err) => {
-    if (err) {
-      res.sendFile(altPath, (err2) => {
-        if (err2) res.status(404).send("<h1 style='color:lime'>Page not found</h1>");
-      });
-    }
-  });
+// Default route for the main page
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "Index.html"));
 });
 
-module.exports = app;
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
