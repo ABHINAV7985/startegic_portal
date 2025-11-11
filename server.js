@@ -21,6 +21,11 @@ app.get("/login", (req, res) => {
   res.sendFile(path.join(__dirname, "login.html"));
 });
 
+
+// Login page
+app.get("/login", (req, res) => {
+  res.sendFile(path.join(__dirname, "templates\index.html"));
+});
 // Signup page
 app.get("/signup", (req, res) => {
   res.sendFile(path.join(__dirname, "Sign.html"));
